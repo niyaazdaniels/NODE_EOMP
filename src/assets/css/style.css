@@ -1,0 +1,322 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+*,
+*::before
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.homePage {
+  position: relative;
+  text-align: center;
+  padding-bottom: 650px; 
+}
+.homePage{
+    background-image: url('../planting-seeds-2021-08-27-10-14-54-utc-scaled.jpg');
+    background-size: cover; 
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
+    padding: 20px;
+    
+        
+    }
+
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+      }
+      
+      nav a.router-link-exact-active {
+        color: rgb(82, 213, 21);
+        
+      }
+      #navbar{
+        background-color: #225815;
+        position: relative;
+        z-index: 999; 
+        width: 100%;
+        z-index: 1000;
+
+      }
+      .nav-item{
+        font-size: large;
+        gap: 3px;
+      }
+
+#aboutImg{
+width: 100%;
+height: 300px;
+object-fit: cover;
+
+}  
+
+.about {
+  padding-top: 100px;
+ }
+ 
+ .flex-container {
+   display: flex;
+   flex-direction: row; 
+   justify-content: space-between; 
+   align-items: center; 
+   flex-wrap: wrap;
+   margin-top: 100px;
+ }
+ 
+ .image-container {
+  height: 500px;
+  width: 500px ;
+ }
+ 
+ .paragraph-container {
+   width: 60%;
+   padding-bottom: 200px; 
+ }
+ #heading{
+   padding-bottom: 400px;
+ }
+ .img-fluid{
+  width: 500px;
+  height: 500px;
+ }
+ #paraBout{
+  font-size: larger;
+ }
+ #Aboutpage1{
+  margin-top: -200px;
+  margin-left: 900px; 
+  color: white;
+ }
+ /* Contact */
+ #Contactpage1{
+  margin-top: -900px;
+  margin-left: 900px;
+  margin-bottom:500px ; 
+  color:black;
+  font-style: italic;
+  font-weight: lighter;
+ 
+}
+.Contact{
+background-image: url('../contact.jpg');
+background-repeat: no-repeat;
+background-size: cover  ;
+}
+#Form{ 
+margin-top: 500px;
+
+
+}
+    /*logo  */
+    #logo{
+      width: 130px;
+      height: 60px;
+      object-fit: cover;
+    }
+     
+
+ 
+ /* Footer */
+ #Footer{
+  background-color: #225815;
+ }
+
+/* spinner component */
+
+     .loader-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 60vh;
+   }
+   .loader {
+     width: 70px;
+     height: 70px;
+     position: relative;
+   }
+   .loader:before {
+     content: "";
+     width: 70px;
+     height: 70px;
+     border-radius: 50%;
+     border: 6px solid #44D43A;
+     position: absolute;
+     top: 0;
+     left: 0;
+     animation: pulse 1s ease-in-out infinite;
+   }
+   .loader:after {
+     content: "";
+     width: 70px;
+     height: 70px;
+     border-radius: 50%;
+     border: 6px solid transparent;
+     border-top-color: #187016;
+     position: absolute;
+     top: 0;
+     left: 0;
+     animation: spin 2s linear infinite;
+   }
+   .loader-text {
+     font-size: 24px;
+     margin-top: 20px;
+     color: #000000;
+     font-family: Arial, sans-serif;
+     text-align: center;
+     text-transform: uppercase;
+   }
+   @keyframes pulse {
+     0% {
+       transform: scale(0.6);
+       opacity: 1;
+     }
+     50% {
+       transform: scale(1.2);
+       opacity: 0;
+     }
+     100% {
+       transform: scale(0.6);
+       opacity: 1;
+     }
+   }
+   @keyframes spin {
+     0% {
+       transform: rotate(0deg);
+     }
+     100% {
+       transform: rotate(360deg);
+     }
+   }
+   .content {
+     display: none;
+   }
+   .loaded .loader-container {
+     display: none;
+   }
+   .loaded .content {
+     display: block;
+   }
+   /* Products */
+  
+  #sortTitle{
+    font-size:18px;
+    margin-right: 1.5rem;
+  }
+  #sort{
+    margin-top: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+    width: 10rem;
+    height: 2rem;
+    outline: none;
+    transition: ease-in-out 1s;
+  }
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .searchBTN{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #image {
+    aspect-ratio: 1/1;
+    width: 15rem;
+    height: auto;
+    margin-top: .5rem;
+  }
+  #search{
+    width: 15rem;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .btn {
+    border: 2px solid #F7F4F1;
+    background-color: #2B821D;
+    color: white;
+  }
+  .btn:hover {
+    background-color: black;
+    color: white;
+  }
+  .card {
+    margin-bottom: 2rem;
+    width: 65% !important;
+  }
+  .category {
+    height: 10%;
+  }
+  .quantity {
+    height: 10%;
+    margin-top: .1rem;
+    margin-bottom: .8rem;
+  }
+  .card-text {
+    height: 50px;
+    overflow: auto;
+  }
+  .title {
+    height: 15%;
+  }
+  .button {
+    height: 10%;
+  }
+  .row {
+    --bs-gutter-x: 0;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  @media screen and (max-width:300px) {
+    .card {
+      width: 295px !important;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    .searchBTN {
+      width: 290px !important;
+    }
+    .row {
+      --bs-gutter-x: 0;
+    }
+  }
+  @media screen and (max-width:700px) {
+    .searchBTN {
+      width: 690px;
+    }
+    #image {
+      width: 15rem;
+    }
+    .quantity {
+      margin-top: .1rem;
+      margin-bottom: .5rem;
+    }
+    .card {
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    .row {
+      --bs-gutter-x: 0;
+    }
+  }
+  @media screen and (min-width: 1592px) {
+    .card {
+      width: 1591px;
+    }
+  }
+
+  
