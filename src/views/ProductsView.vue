@@ -10,9 +10,8 @@
       <div class="sort-dropdown">
         <label for="sort" id="sortTitle">Sort by: </label>
         <select id="sort" v-model="sortBy">
-          <option value="default">Default</option>
-          <option value="price">Price</option>
-          <option value="category">Category</option>
+          <option value="amount">Price</option>
+          <option value="Category">Category</option>
           <option value="alphabetical">Alphabetical</option>
         </select>
         <button class="btn" @click="sortToggle">

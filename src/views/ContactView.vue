@@ -37,10 +37,6 @@
                               <label for="#Message" class="form-label"></label>
                               <textarea class="form-control" id="Message" rows="8" placeholder="Message"></textarea>
                             </div>
-                        <!-- <div class="align-items-center">
-                            <a href="https://maps.app.goo.gl/ejiyCsYFAuQjE7icA"   class="text-dark mx-2">
-                             <i class="bi bi-geo-fill"></i> </a> 314 Imam Haron Rd, Lansdowne, Cape Town, 7780
-                        </div> -->
                        
                     </div>
 
@@ -77,6 +73,10 @@
 }
 .container-fluid{
   width:95%
+}
+.btn{
+  width: 600px;
+  background-color: #2B821D ;
 }
 
 </style>
