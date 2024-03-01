@@ -1,5 +1,5 @@
 // Importing necessary functions for user management from the users model
-import { getUsers, getUser, addUser, editUser, deleteUser, verifyUser } from '../models/users.js';
+import { getUsers, getUser, addUser, editUser, deleteUser, verifyUser, registerUser } from '../models/users.js';
 // Importing bcrypt for password hashing
 import bcrypt from 'bcrypt';
 
@@ -22,26 +22,42 @@ export default {
             res.status(500).send({ error: "Internal Server Error" });
         }
     },
-
     // Controller to add a single user to the database
-    addOneUser: async (req, res) => {
+addOneUser: async (req, res) => {
+    try {
+        // Extract user details from the request body
+        const { firstName, lastName, userAge, gender, userRole, emailAdd, userPass, userProfile } = req.body;
+        // Hash the password using bcrypt
+        const hash = await bcrypt.hash(userPass, 10);
+        // Add user with hashed password to the database
+        await addUser(firstName, lastName, userAge, gender, userRole, emailAdd, hash, userProfile);
+        // Send success response
+        res.send('User has been added successfully');
+    } catch (error) {
+        // Handle errors
+        res.status(500).send('Error adding user: ' + error);
+    }
+},
+    // Controller to add a single user to the database
+    registerOneUser: async (req, res) => {
         try {
+            const post = await registerUser(emailAdd, userPass)
             // Extract user details from the request body
-            const { firstName, lastName, userAge, gender, userRole, emailAdd, userPass, userProfile } = req.body;
+            const { emailAdd, userPass } = req.body;
             // Hash the password using bcrypt
             bcrypt.hash(userPass, 10, async (err, hash) => {
                 if (err) throw err;
                 // Add user with hashed password to the database
-                await addUser(firstName, lastName, userAge, gender, userRole, emailAdd, hash, userProfile);
+                await registerUser(emailAdd, hash);
             });
             // Send success response
-            res.send('User has been added successfully');
-        } catch (error) {
+            res.send('User has been registered successfully');
+        } catch (error) { 
             // Handle errors
             res.status(500).send('Error registering user: ' + error);
+            res.send(await registerUser())
         }
     },
-
     // Controller to fetch a single user from the database
     getOneUser: async (req, res) => {
         try {
@@ -111,23 +127,28 @@ export default {
             res.status(500).send({ error: "Internal Server Error" });
         }
     },
-
     // Controller to login a user by comparing passwords
-    logInUser: async(req, res, next) => {
-        // Extract email and password from request body
-        const { emailAdd, userPass } = req.body;
-        // Retrieve hashed password for the provided email
-        const hashedPassword = await verifyUser(emailAdd);
-        // Compare provided password with hashed password
-        bcrypt.compare(userPass, hashedPassword, (err, result) => {
-            if (err) throw err;
+    logInUser: async (req, res, next) => {
+        try {
+            // Extract email and password from request body
+            const { emailAdd, userPass } = req.body;
+            // Retrieve hashed password for the provided email
+            const hashedPassword = await verifyUser(emailAdd);
+            // Compare provided password with hashed password
+            const result = await bcrypt.compare(userPass, hashedPassword);
             // If passwords match, proceed to the next middleware
             if (result === true) {
-                next();
+                res.send({
+                    msg:  `Welcome back ${emailAdd}!`
+                })
             } else {
                 // If passwords do not match, send error response
-                res.send({ msg: "Password does not match, please try again." });
+                res.status(401).send({ msg: "Password does not match, please try again." });
             }
-        });
+        } catch (error) {
+            // Handle errors
+            res.status(500).send('Error logging in user: ' + error);
+        }
     }
+    
 }
