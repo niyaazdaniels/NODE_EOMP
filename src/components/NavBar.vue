@@ -27,11 +27,6 @@
          </li>
 
          <li class="nav-item">
-             <RouterLink to="/product" class="nav-link active text-white">
-                 Product
-           </RouterLink>
-         </li>
-         <li class="nav-item">
              <RouterLink to="/admin" class="nav-link active text-white">
                  Admin
            </RouterLink>

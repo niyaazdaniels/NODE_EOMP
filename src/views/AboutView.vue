@@ -8,9 +8,11 @@
     </div>
     <div class="flex-container">
       <div class="paragraph-container">
+        <h3 class="text-dark" id="subtitile">Our narative</h3>
         <p class="container  text-dark" id="paraBout">
         <span>N</span>atura prides themselves to growing their own food freshly from the natural resources provided by nature. We were inspired by a collection of young children in love with smell of fresh soil.
         </p>
+        <h3 class="text-dark" id="subtitile">Our connects</h3>
         <p class="container  text-dark" id="paraBout">
         Natura is a South African supermarket chain that operates franchised grocery stores and convenience stores in Southern Africa. The company is a member of the Franchise Association of South Africa. As of 2022, there are over 300 stores in South Africa, 2 in Botswana and 3 in Namibia. 
         </p>
@@ -24,3 +26,7 @@
   </div>
   </div>
 </template>
+<style scoped>
+
+
+</style>  

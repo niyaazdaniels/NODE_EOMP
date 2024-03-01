@@ -1,6 +1,9 @@
 <template>
-    <div>
-      <h1>Products</h1>
+    <div class="row">
+      <img class="container-fluid" src="../assets/Weet.jpg" id="productImg" alt="productImg">
+      <div>
+        <h1 class="text-white display-2">Products</h1>
+      </div>
         <form class="d-flex lg-2 searchBTN" role="search">
             <input class="form-control" type="search" id="search" placeholder="Search" aria-label="Search" v-model="searchProducts" />
         </form>
@@ -16,7 +19,7 @@
           {{ sort === 'asc' ? 'Ascending' : 'Descending' }}
         </button>
       </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 flex" v-if="products">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 flex" v-if="products" id="products">
         <div class="col flex" v-for="product in filteredProducts" :key="product">
           <div class="card flex" id="test">
             <center>
@@ -34,7 +37,7 @@
                 <p class="card-text">Price: R{{ product.amount }}</p>
               </div>
               <div class="button">
-                <button @click="viewProduct(product.prodID)" class="btn">View More</button>
+                <button @click="viewProduct(product.prodID)" class="btnP text-white">View More</button>
               </div>
             </div>
           </div>
@@ -107,4 +110,32 @@
     }
   };
   </script>
+  <style scoped>
+#products{
+  padding-bottom: 10%;
+}
+.btnP{
+  background-color: #225815;
+}
+.btn{
+ border-color: black;
+}
+h1{
+  padding-bottom: 5%;
+  
+}
+#productImg{
+  width: 100%;
+height: 300px;
+object-fit: cover;
+}
+.display-2{
+  margin-top: -200px;
+  margin-left: 60%;
+  font-style: italic;
+}
+.searchBTN{
+  padding-top: 5%;
+}
+</style>
   

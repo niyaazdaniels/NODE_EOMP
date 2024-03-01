@@ -7,7 +7,7 @@
                       Grow it together,
                        Grow it yourself
                     </h1>
-                    <h4 class="display-4 text-dark  fst-italic "  id="name"> 
+                    <h4 class="display-2 text-dark  fst-italic "  id="name"> 
                       Natura    
                     </h4>
                 </div>
